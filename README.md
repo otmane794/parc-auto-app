@@ -7,13 +7,24 @@ précédentes de ce projet.
 
 ## Stack technique
 
-- **React 18** + **Vite** (build ultra-rapide, HMR)
-- **React Router** — navigation par rôle, page 404, routes protégées
-- **Tailwind CSS** — design system cohérent (cartes, badges, boutons)
-- **Recharts** — graphiques (aires, barres, lignes, camemberts)
-- **lucide-react** — iconographie
+| Domaine | Technologie |
+|---|---|
+| Framework UI | **React 18** (composants fonctionnels, hooks, Context API) |
+| Build & dev server | **Vite 5** + `@vitejs/plugin-react` (HMR, build rapide) |
+| Routage | **React Router 6** (routes protégées par rôle, page 404) |
+| Styles | **Tailwind CSS 3** + PostCSS / Autoprefixer |
+| Graphiques | **Recharts** (aires, barres, lignes, camemberts) |
+| Icônes | **lucide-react** |
+| Export PDF | **jsPDF** + **jspdf-autotable** |
+| Export Word | **docx** |
+| Typographie | Inter & JetBrains Mono (Google Fonts) |
 
-Aucune dépendance superflue : le projet reste léger et lisible de bout en bout.
+**Architecture** : SPA 100 % frontend, avec un store partagé via React Context
+(`DataProvider`), l'authentification par rôle, des notifications (toasts) et un
+`ErrorBoundary`. Les données sont simulées (`mockData.js`, API AGIRH virtuelle)
+en attendant le backend.
+
+**Outils** : Node.js 18+, npm.
 
 ## Démarrer en local
 
@@ -62,6 +73,10 @@ sur les liens du menu, et se met à jour en temps réel.
 - Modales toujours défilables, même sur petit écran, même avec un formulaire
   long (le piège classique du centrage flex sans overflow a été corrigé)
 
+### Exports de rapports
+Le module Reporting génère des rapports consolidés téléchargeables en **PDF**
+(jsPDF + jspdf-autotable) et en **Word** (docx).
+
 ### Finitions
 - Écran de chargement au démarrage, titres d'onglet dynamiques, favicon
 - Micro-interactions cohérentes partout (effet d'appui, survol, apparition en
@@ -93,5 +108,5 @@ src/
 - Authentification réelle (JWT / SSO) à la place du sélecteur de rôle
 - Interfaçage AGIRH, imports RimTrack / Afriquia
 - Envoi réel des e-mails de demande d'intervention (SMTP) + horodatage
-- Génération des exports PDF / Excel du module Reporting (actuellement des
-  notifications honnêtes indiquent que ces boutons ne sont pas encore branchés)
+- Export Excel du module Reporting (les exports PDF et Word sont déjà
+  fonctionnels)
