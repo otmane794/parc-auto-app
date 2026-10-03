@@ -1,9 +1,6 @@
 # FleetOps — Gestion du parc automobile
 
-Version finale — frontend React pour l'application de gestion du parc automobile
-de Menara Holding, conforme au cahier des charges (acteurs, cas d'utilisation,
-diagramme de classes) et bâtie sur les meilleurs éléments de toutes les itérations
-précédentes de ce projet.
+Développement du frontend d’une application de gestion du parc automobile de Ménara Holding avec React. L’interface permet de consulter et gérer les véhicules, leur utilisation, les coûts, le carburant, les entretiens, les réparations et les contrôles techniques.
 
 ## Stack technique
 
